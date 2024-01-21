@@ -36,7 +36,6 @@ set -o pipefail
 ERR_LOG="/tmp/teeer-$$-err.log"
 trap cleanup EXIT
 rm -f $ALL_LOG $ERR_LOG; touch $ERR_LOG
-echo "$ERR_LOG"
 
 ### Subprocess handling stderr
 (
