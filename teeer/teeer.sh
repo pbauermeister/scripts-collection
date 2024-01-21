@@ -1,11 +1,13 @@
 #!/bin/bash
 # Script (C) 2024 by P. Bauermeister.
 #
-# This script executes a shell command, intercepting stdout and stderr
-# to a single log file, and spitting stdout and stderr as the command
-# alone would do. On error, exits with the same code as the command.
+# This script executes a given shell command, intercepting stdout and
+# stderr merged into a given log file.
 #
-# Usage: teeer.sh LOGFILE COMAND ARG...
+# As a wrapper of the given command, it forwards its output to stdout
+# resp. stderr, and exits with the command's return code.
+#
+# Usage: teeer.sh LOGFILE COMAND [ARG...]
 #
 # TODO:
 # - Option to format the lines, incl. timestamp, and (to help
@@ -13,7 +15,7 @@
 
 die() {
     echo >&2 "Error: $*"
-    echo >&2 "usage: $0 LOGFILE COMAND ARG..."
+    echo >&2 "usage: $0 LOGFILE COMAND [ARG...]"
     exit 1
 }
 
