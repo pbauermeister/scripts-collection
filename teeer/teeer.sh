@@ -7,7 +7,7 @@
 # As a wrapper of the given command, it forwards its output to stdout
 # resp. stderr, and exits with the command's return code.
 #
-# Usage: teeer.sh LOGFILE COMAND [ARG...]
+# Usage: teeer.sh LOGFILE COMMAND [ARG...]
 #
 # TODO:
 # - Option to format the lines, incl. timestamp, and (to help
@@ -15,7 +15,7 @@
 
 die() {
     echo >&2 "Error: $*"
-    echo >&2 "usage: $0 LOGFILE COMAND [ARG...]"
+    echo >&2 "usage: $0 LOGFILE COMMAND [ARG...]"
     exit 1
 }
 
